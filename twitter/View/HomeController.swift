@@ -20,28 +20,47 @@ class HomeController : UICollectionViewController, UICollectionViewDelegateFlowL
     let cellId = "cellId"
     let headId = "headId"
     let footId = "footId"
+    let tweetId = "tweetId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.backgroundColor = UIColor(red: 232/255, green: 236/255, blue: 241/255, alpha: 1)
+        
         setUpNavigationButton()
         
-        collectionView?.backgroundColor = .white
-        collectionView?.register(Cell.self, forCellWithReuseIdentifier: "cellId")
+//        collectionView?.backgroundColor = .white
+        collectionView?.register(Cell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(CollectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headId)
         collectionView.register(CollectionFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: footId)
+        collectionView.register(TweetCell.self, forCellWithReuseIdentifier: tweetId)
+    }
+    
+    //MARK: - collection view datasource methods
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0{
+            return users.count
+        } else{
+            return 1
+        }
+    }
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
     }
     
     //MARK: - collection view delegate methods
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return users.count
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! Cell
-        cell.user = users[indexPath.item]
-        return cell
+        if indexPath.section == 0{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! Cell
+            cell.user = users[indexPath.item]
+            return cell
+        } else {
+            let tweet = collectionView.dequeueReusableCell(withReuseIdentifier: tweetId, for: indexPath)
+            return tweet
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -58,17 +77,21 @@ class HomeController : UICollectionViewController, UICollectionViewDelegateFlowL
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        // arbitary large value
-        let height : CGFloat = 1000
-        let width : CGFloat = view.frame.width - 58
-        let size = CGSize(width: width, height: height)
-        
-        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)]
-        
-        // estimate the suitable size for the text of each user's bioText
-        let estimatedFrame = NSString(string: users[indexPath.item].bioText).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
-        
-        return CGSize(width: view.frame.width, height: estimatedFrame.height + 66)
+        if indexPath.section == 0{
+            // arbitary large value
+            let height : CGFloat = 1000
+            let width : CGFloat = view.frame.width - 58
+            let size = CGSize(width: width, height: height)
+            
+            let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)]
+            
+            // estimate the suitable size for the text of each user's bioText
+            let estimatedFrame = NSString(string: users[indexPath.item].bioText).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+            
+            return CGSize(width: view.frame.width, height: estimatedFrame.height + 66)
+        } else {
+            return CGSize(width: view.frame.width, height: 300)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -76,11 +99,18 @@ class HomeController : UICollectionViewController, UICollectionViewDelegateFlowL
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 1{
+            return .zero
+        }
         return CGSize(width: view.frame.width, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 50)
+        if section == 1{
+            return .zero
+        }
+        
+        return CGSize(width: view.frame.width, height: 70)
     }
     
 }

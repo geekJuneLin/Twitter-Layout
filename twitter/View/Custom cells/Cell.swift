@@ -50,7 +50,6 @@ class Cell : UICollectionViewCell{
         textView.font = UIFont.systemFont(ofSize: 15)
         textView.isEditable = false
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = .clear
         return textView
     }()
     
@@ -88,7 +87,7 @@ class Cell : UICollectionViewCell{
     }
     
     private func setupViews(){
-//        backgroundColor = .blue
+        backgroundColor = .white
         
         addSubview(label)
         addSubview(imageView)

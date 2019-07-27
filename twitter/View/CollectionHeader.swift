@@ -30,6 +30,9 @@ class CollectionHeader : UICollectionViewCell{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        backgroundColor = .white
+        
         addSubview(label)
         addSubview(saperatorView)
         
