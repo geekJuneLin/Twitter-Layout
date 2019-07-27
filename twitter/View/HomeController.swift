@@ -13,8 +13,8 @@ class HomeController : UICollectionViewController, UICollectionViewDelegateFlowL
     let users = [
         User(profileImage: "dinosaur", name: "Junyu Lin", userName: "jl513", bioText: "A iOS & Android developer and interested in learning new tech things!"),
         User(profileImage: "dinosaur", name: "Chloe Qin", userName: "cq25", bioText: "A professional graphic designer, good at UI/UX desgining."),
-        User(profileImage: "dinosaur", name: "Junyu Lin", userName: "jl513", bioText: "A iOS & Android developer and interested in learning new tech things!"),
-        User(profileImage: "dinosaur", name: "Chloe Qin", userName: "cq25", bioText: "A professional graphic designer, good at UI/UX desgining.")
+//        User(profileImage: "dinosaur", name: "Junyu Lin", userName: "jl513", bioText: "A iOS & Android developer and interested in learning new tech things!"),
+//        User(profileImage: "dinosaur", name: "Chloe Qin", userName: "cq25", bioText: "A professional graphic designer, good at UI/UX desgining.")
     ]
     
     let cellId = "cellId"
@@ -41,7 +41,7 @@ class HomeController : UICollectionViewController, UICollectionViewDelegateFlowL
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 120)
+        return CGSize(width: view.frame.width, height: 150)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -52,6 +52,10 @@ class HomeController : UICollectionViewController, UICollectionViewDelegateFlowL
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: footId, for: indexPath)
             return footer
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

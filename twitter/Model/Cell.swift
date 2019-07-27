@@ -68,6 +68,15 @@ class Cell : UICollectionViewCell{
         return button
     }()
     
+    let saperatorView : UIView = {
+        let view = UIView()
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor = UIColor.darkGray.cgColor
+        view.layer.opacity = 0.5
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -79,11 +88,14 @@ class Cell : UICollectionViewCell{
     }
     
     private func setupViews(){
+//        backgroundColor = .blue
+        
         addSubview(label)
         addSubview(imageView)
         addSubview(userName)
         addSubview(textView)
         addSubview(button)
+        addSubview(saperatorView)
         
         label.topAnchor.constraint(equalTo: imageView.topAnchor).isActive = true
         label.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 12).isActive = true
@@ -109,5 +121,10 @@ class Cell : UICollectionViewCell{
         button.topAnchor.constraint(equalTo: label.topAnchor).isActive = true
         button.heightAnchor.constraint(equalToConstant: 34).isActive = true
         button.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        saperatorView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        saperatorView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        saperatorView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        saperatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
 }
