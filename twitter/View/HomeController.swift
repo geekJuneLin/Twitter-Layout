@@ -13,8 +13,8 @@ class HomeController : UICollectionViewController, UICollectionViewDelegateFlowL
     let users = [
         User(profileImage: "dinosaur", name: "Junyu Lin", userName: "jl513", bioText: "A iOS & Android developer and interested in learning new tech things!"),
         User(profileImage: "dinosaur", name: "Chloe Qin", userName: "cq25", bioText: "A professional graphic designer, good at UI/UX desgining. A professional graphic designer, good at UI/UX desgining. A professional graphic designer, good at UI/UX desgining. A professional graphic designer, good at UI/UX desgining."),
-//        User(profileImage: "dinosaur", name: "Junyu Lin", userName: "jl513", bioText: "A iOS & Android developer and interested in learning new tech things!"),
-//        User(profileImage: "dinosaur", name: "Chloe Qin", userName: "cq25", bioText: "A professional graphic designer, good at UI/UX desgining.")
+        User(profileImage: "dinosaur", name: "Crystal Lin", userName: "jl513", bioText: "A iOS & Android developer and interested in learning new tech things! A professional graphic designer, good at UI/UX desgining. A professional graphic designer, good at UI/UX desgining. A professional graphic designer, good at UI/UX desgining. A professional graphic designer, good at UI/UX desgining.A iOS & Android developer and interested in learning new tech things! A professional graphic designer, good at UI/UX desgining. A professional graphic designer, good at UI/UX desgining. A professional graphic designer, good at UI/UX desgining. A professional graphic designer, good at UI/UX desgining."),
+
     ]
     
     let cellId = "cellId"
@@ -44,7 +44,7 @@ class HomeController : UICollectionViewController, UICollectionViewDelegateFlowL
         
         // arbitary large value
         let height : CGFloat = 1000
-        let width : CGFloat = view.frame.width - 80
+        let width : CGFloat = view.frame.width - 58
         let size = CGSize(width: width, height: height)
         
         let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)]
@@ -52,7 +52,7 @@ class HomeController : UICollectionViewController, UICollectionViewDelegateFlowL
         // estimate the suitable size for the text of each user's bioText
         let estimatedFrame = NSString(string: users[indexPath.item].bioText).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
         
-        return CGSize(width: view.frame.width, height: estimatedFrame.height + 68)
+        return CGSize(width: view.frame.width, height: estimatedFrame.height + 66)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
