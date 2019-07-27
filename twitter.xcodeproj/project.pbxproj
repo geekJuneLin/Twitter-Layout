@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E4B968722EC40AA0038AFAE /* CollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B968622EC40AA0038AFAE /* CollectionHeader.swift */; };
 		8E4B968922EC40B80038AFAE /* CollectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B968822EC40B80038AFAE /* CollectionFooter.swift */; };
+		8E4B968B22EC4C2B0038AFAE /* HomeController+navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B968A22EC4C2B0038AFAE /* HomeController+navbar.swift */; };
 		8EE3FDB722EA88CC00522FEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3FDB622EA88CC00522FEA /* AppDelegate.swift */; };
 		8EE3FDBE22EA88CD00522FEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE3FDBD22EA88CD00522FEA /* Assets.xcassets */; };
 		8EE3FDC122EA88CD00522FEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE3FDBF22EA88CD00522FEA /* LaunchScreen.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		8E4B968622EC40AA0038AFAE /* CollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeader.swift; sourceTree = "<group>"; };
 		8E4B968822EC40B80038AFAE /* CollectionFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionFooter.swift; sourceTree = "<group>"; };
+		8E4B968A22EC4C2B0038AFAE /* HomeController+navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeController+navbar.swift"; sourceTree = "<group>"; };
 		8EE3FDB322EA88CC00522FEA /* twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE3FDB622EA88CC00522FEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EE3FDBD22EA88CD00522FEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				8EE3FDCA22EA9B3B00522FEA /* HomeController.swift */,
 				8E4B968622EC40AA0038AFAE /* CollectionHeader.swift */,
 				8E4B968822EC40B80038AFAE /* CollectionFooter.swift */,
+				8E4B968A22EC4C2B0038AFAE /* HomeController+navbar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EE3FDD022EAF31600522FEA /* User.swift in Sources */,
+				8E4B968B22EC4C2B0038AFAE /* HomeController+navbar.swift in Sources */,
 				8EE3FDCB22EA9B3B00522FEA /* HomeController.swift in Sources */,
 				8E4B968922EC40B80038AFAE /* CollectionFooter.swift in Sources */,
 				8EE3FDB722EA88CC00522FEA /* AppDelegate.swift in Sources */,

@@ -24,6 +24,8 @@ class HomeController : UICollectionViewController, UICollectionViewDelegateFlowL
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpNavigationButton()
+        
         collectionView?.backgroundColor = .white
         collectionView?.register(Cell.self, forCellWithReuseIdentifier: "cellId")
         collectionView.register(CollectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headId)
@@ -82,5 +84,4 @@ class HomeController : UICollectionViewController, UICollectionViewDelegateFlowL
     }
     
 }
-
 
